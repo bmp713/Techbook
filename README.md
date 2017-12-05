@@ -5,3 +5,5 @@ Active URL:
 45.63.53.116/brandon/index.html
 
 User can create a new account or use an existing one. All existing accounts can be logged in using "Password" as password, and one of the following user names: "steve", "david", "michael".
+
+I wrote everything from scratch with no use of frameworks to learn the fundamentals of HTML, CSS, PHP, and MySQL. 
