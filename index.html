@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">    
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="LAMP | Server">
+    <title> Techbook | Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="style.js"></script> 
+</head>
+<body>
+    <div id="container">
+
+        <div id="video_container">
+            <video src="assets/video/movie.mp4" width="100%" autoplay loop muted>
+            </video>
+        </div>
+
+        <div id="header">
+            <h1>Techbook <span style=" font: 24px sans-serif;">| Advanced Systems</span></h1>
+        </div>
+
+        <div id="navbar">
+            <a class="current" href="index.html" style="width:25%">Home</a>
+            <a href="login.php" style="width:25%">Login</a>
+            <a href="register.php" style="width:25%">New Account</a>
+        </div>
+
+        <div id="main">
+
+            <div id="box-one">
+                <div id="menu">
+                    <button onclick="menuClick()" id="menu-button">Menu</button>
+                    <div id="menu-content">
+                        <a class="current" href="index.html">Home</a>
+                        <a href="login.php">Login</a>
+                        <a href="register.php">New Account</a>
+                    </div>
+                </div> 
+      
+            </div>
+
+            <div id="box-two">
+
+                <!--<br><br><img src="assets/images/iphone-ipad-apple.jpg" height="50%"><br><br>-->
+                <div id="box-one-text">
+	                <h2>Server (computing)</h2>
+    	            <p>
+                        This site is meant to demonstrate backend software skills. Log in any acount with "Password" as password, and bruce, steve, michael, 
+                        or david to log into sample profiles.
+
+        	            In computing, a server is a computer program or a device that provides functionality for other programs or devices, called "clients". 
+            	        This architecture is called the client–server model, and a single overall computation is distributed across multiple processes or 
+                	    devices. Servers can provide various functionalities, often called "services", such as sharing data or resources among multiple 
+                    	clients, or performing computation for a client. A single server can serve multiple clients, and a single client can use multiple 
+                    	servers.
+                    	</p><br><br>
+                    	<h2>Clients</h2>
+                    	<p>
+                    	A single server can serve multiple clients, and a single client can use multiple 
+                    	servers. A client process may run on the same device or may connect over a network to a server on a different device. Typical 
+                    	servers are database servers, file servers, mail servers, print servers, web servers, game servers, and application servers.
+                    	</p><br><br>
+                    	<h2>Account Options</h2>
+                </div>
+
+                <br>Login<br><br>
+                <input type="button" value="Login" class="main-button" onclick="window.location.href='login.php'"><br>
+                <br>New Account<br><br>
+                <input type="button" value="New Account" class="main-button" onclick="window.location.href='register.php'"><br><br><br>
+            
+            </div>    
+
+        </div>
+	   
+        <div id="footer">
+            <h3>Techbook | Welcome &copy;2017</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
