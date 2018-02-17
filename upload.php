@@ -12,7 +12,7 @@
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/movie.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Buildings.mp4" width="100%" autoplay loop muted>
             </video>
         </div>
 

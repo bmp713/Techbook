@@ -12,7 +12,7 @@
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/movie.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Walking_1.mp4" width="100%" autoplay loop muted>
             </video>
         </div>
 
@@ -80,14 +80,12 @@
 
                         //Display background image if defined
                         if( isset( $row{'background'} ) ){
-                            
                             $target_file = $row{'background'};
                             echo '<script>makeBackground("'.$target_file.'");</script>';
                         }
         
                         // Change background image
                         if( isset( $_GET['make_background']) ){
-                        
                             //$target_file = $_GET['target_file'];
                             $_SESSION['background'] = $_GET['target_file'];
                             $target_file = $_SESSION['background'];
@@ -100,11 +98,11 @@
                             echo '<script>makeBackground("'.$target_file.'");</script>';
                             //echo 'Background File: '.$target_file.'<br><br><br><br><br>';
                             //echo 'SESSION[background] = '.$target_file.'<br>';
+                            //die();
                         }
 
                         // Change user's main image
                         if( isset( $_GET['make_profile']) ){
-
                             $_SESSION['user_image'] = $_GET['target_file'];
                             $target_file = $_SESSION['user_image'];
 
@@ -114,7 +112,6 @@
                             
                             $_GET['make_profile'] = 0;
                             //$_GET['target_file'] = 0;
-
                             //header("location: profile.php");
                         }
                         else{
@@ -126,9 +123,7 @@
                         }
                         //echo '<br>File: '.$row{'image'};
 	                    //echo "<br>SESSION[user_image] = ".$_SESSION['user_image'];
-	                  	//echo "<br>user_files{2} = ".$user_files{2};
-	                  	//echo "<br>user_files{3} = ".$user_files{3};
-
+                        
                         echo "<br><br>__________________________________________________________<br>";  
                         echo '<h1 style="color: white;font-size:36px;">Profile</h1>';     
 
@@ -241,19 +236,7 @@
         <div id="footer">
             <h1>Techbook</h1><br>
                 <p>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
-                <br><br>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.               
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.               
-                This is some random content to demonstrate parallax. This is some random content to demonstrate parallax.<br>
+                This is some random content to demonstrate parallax. <br>
                 </p><br><br><br>
         </div>
 
