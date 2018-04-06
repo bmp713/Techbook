@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">    
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="LAMP | Server">
-    <title> Techbook | Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="style.js"></script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="LAMP | Server">
+<title> Techbook | Welcome</title>
+<link rel="stylesheet" href="style.css">
+<script src="style.js"></script> 
 </head>
 <body>
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/Buildings.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Walking_1.mp4" width="100%" 
+                    style="filter:brightness(30%)" autoplay loop muted>
             </video>
         </div>
 
@@ -22,7 +23,7 @@
 
         <div id="navbar">
             <a href="index.html">Home</a>
-            <a class="current" href="login.php">Login</a></li>
+            <a class="current" href="index.php">Login</a></li>
             <a href="register.php">New Account</a>
         </div>
 
@@ -33,7 +34,7 @@
                    	<button onclick="menu_click()" id="menu-button">Menu</button>
                     <div id="menu-content">
                         <a href="index.html">Home</a>
-                        <a class="current" href="login.php">Login</a>
+                        <a class="current" href="index.php">Login</a>
                         <a href="register.php">New Account</a>
                     </div>
                 </div> 

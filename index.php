@@ -23,7 +23,7 @@
 
         <div id="navbar">
             <a href="index.html">Home</a>
-            <a class="current" href="login.php">Login</a></li>
+            <a class="current" href="index.php">Login</a></li>
             <a href="register.php">New Account</a>
         </div>
 
@@ -31,7 +31,6 @@
 
             <div id="box-one">
                 <div id="menu">
-                    <button onclick="menu_click()" id="menu-button">Menu</button>
                     <div id="menu-content">
                         <a class="current" href="index.html">Home</a>
                         <a href="index.php">Login</a>
@@ -47,10 +46,16 @@
             </div>
 
             <div id="box-two">
-					Please log in to account<br><br>
-   					<form action="index.php" method="POST">
-                		User Name<br><input class="input-box" type="text" name="uid" placeholder="User Name"><br><br>
-           				Password<br><input class="input-box" type="password" name="pwd" placeholder="Password"><br><br>
+
+                    <h1>Welcome</h1><br>
+                    <h2>Please log into sample account or create your own</h2>
+                    <p class="login_p">
+                        This site was created to demonstrate backend skills with Apache, MySQL, and PHP.
+                    </p><br>
+				
+   					<form action="index.php" method="POST" id="form_login">
+                		User Name<br><input class="input-box" type="text" name="uid" placeholder="User Name" value="steve"><br><br>
+           				Password<br><input class="input-box" type="password" name="pwd" placeholder="Password" value="Password"><br><br>
            				<br><button type="submit" class="main-button">Log In</button>
    					</form><br>
 					<?php
@@ -86,16 +91,11 @@
                             }
                             else{
                                 if( $row{'pwd'} != $pword ){
-                                    echo "login.php: Error: password incorrect"."<br>";
+                                    echo "index.php: Error: password incorrect"."<br>";
                                 }
                             }
                         }
       				?>
-
-                    <p>
-                    This site is meant to demonstrate backend software skills. Log in any acount with 
-                    "Password" as password and steve, michael, or david to log into sample profiles.
-                    </p><br><br>
 			</div>	
 
         </div> <!-- End main -->

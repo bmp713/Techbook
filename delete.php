@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="LAMP | Server">
-    <title> Techbook | Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="style.js"></script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="LAMP | Server">
+<title> Techbook | Welcome</title>
+<link rel="stylesheet" href="style.css">
+<script src="style.js"></script> 
 </head>
 <body>
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/Buildings.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Walking_1.mp4" width="100%" 
+                    style="filter:brightness(30%)" autoplay loop muted>
             </video>
         </div>
 
@@ -31,7 +32,7 @@
                 }
                 else{
                     echo '<a href="index.html">Home</a>';
-                    echo '<a href="login.php">Login</a>';
+                    echo '<a href="index.php">Login</a>';
                     echo '<a href="register.php">New Account</a>';
                 }
             ?>
@@ -41,7 +42,6 @@
 
             <div id="box-one">
                 <div id="menu">
-                    <button onclick="menu_click()" id="menu-button">Menu</button>
                     <div id="menu-content">
                         <?php
                             session_start();
@@ -53,7 +53,7 @@
                             }
                             else{
                                 echo '<a href="index.html">Home</a>';
-                                echo '<a href="login.php">Login</a>';
+                                echo '<a href="index.php">Login</a>';
                                 echo '<a href="register.php">New Account</a>';
                             }
                         ?>
@@ -79,12 +79,10 @@
                             /* Assign variables from HTML form */
                             $userid = $_POST["uid"];
                             $pword = $_POST["pwd"];
-                            /* echo " \"$userid\" "." logged in with password "."\"$pword\""."<br>"; */
 
                             /* Connection to mySQL */
                             $connect = mysqli_connect($host, $username, $password, $database)
                                 or die("Unable to connect to MySQL");
-                                /* echo "<br>Connected to MySQL<br>"; */
 
                             /* Search and print record */
                             $result = mysqli_query($connect, "SELECT * FROM $table WHERE uid = '$userid'");
@@ -94,10 +92,6 @@
                                 /* Delete record */
                                 $query = "DELETE FROM users WHERE uid='$userid'";
                                 $result = mysqli_query($connect, $query);
-                                /* echo "Query = ".$query."<br>"; 
-                                echo "Result = ".$result."<br>";
-                                $result = mysql_query("DELETE * FROM names WHERE uid = '$userid' AND pwd = '$pword' ");
-                                */
 
                                 if( $_SESSION['first'] ){
                                     if( $result ){

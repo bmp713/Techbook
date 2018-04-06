@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">    
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="LAMP | Server">
-    <title> Techbook | Advanced</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="style.js"></script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="LAMP | Server">
+<title> Techbook | Welcome</title>
+<link rel="stylesheet" href="style.css">
+<script src="style.js"></script> 
 </head>
 <body>
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/Walking_1.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Walking_1.mp4" width="100%" 
+                    style="filter:brightness(30%)" autoplay loop muted>
             </video>
         </div>
 
@@ -31,7 +32,7 @@
                 }
                 else{
                     echo '<a href="index.html">Home</a>';
-                    echo '<a href="login.php">Login</a>';
+                    echo '<a href="index.php">Login</a>';
                     echo '<a href="register.php">New Account</a>';
                 }
             ?>
@@ -41,7 +42,6 @@
             
             <div id="box-one">
                 <div id="menu">
-                    <button onclick="menu_click()" id="menu-button">Menu</button>
                     <div id="menu-content">
                         <?php
                             session_start();
@@ -53,7 +53,7 @@
                             }
                             else{
                                 echo '<a href="index.html">Home</a>';
-                                echo '<a href="login.php">Login</a>';
+                                echo '<a href="index.php">Login</a>';
                                 echo '<a href="register.php">New Account</a>';
                             }
                         ?>
@@ -98,7 +98,6 @@
                             echo '<script>makeBackground("'.$target_file.'");</script>';
                             //echo 'Background File: '.$target_file.'<br><br><br><br><br>';
                             //echo 'SESSION[background] = '.$target_file.'<br>';
-                            //die();
                         }
 
                         // Change user's main image
@@ -139,7 +138,7 @@
                         echo '<div class="info"'."<br>Password: ".$_SESSION['password']."</div><br>";                        
                     }
                     else{
-                        header("location: login.php");
+                        header("location: index.php");
                     }
       			?>
 			</div>
@@ -167,9 +166,9 @@
                        	$user_files = scandir( $user_dir );
 
                        	// Deleted image same as last image
-                       	$last = $user_dir."/".$user_files{2};
+                       	$first = $user_dir."/".$user_files{2};
 
-                       	if( $_GET['target_file'] == $last ){
+                       	if( $_GET['target_file'] == $first ){
 
                        		// Deleted image same as profile image
                        		if( $_GET['target_file'] == $_SESSION['user_image'] ){
@@ -192,7 +191,7 @@
 						}
                         // Update user inmage in database
 						$result = mysqli_query( $connect, "UPDATE $table SET image='$target_file' WHERE uid='$user_id';" )
-                                or die("<br>ERROR: upload.php: Could not insert data into $table<br>");
+                                or die("<br>ERROR: profile.php: Could not insert data into $table<br>");
 
                         // Delete requested file
                         unlink( $_GET['target_file'] );
@@ -200,7 +199,7 @@
 
                         header("location: profile.php");
                     }
-
+                    
                     // Set to display images in descending order
                     if( isset( $_GET['descending']) ){
                         $_SESSION['order'] = 'descending';
@@ -208,19 +207,17 @@
                     else{
                         $_SESSION['order'] = 'ascending';
                     }
-
                     // Display all user images
                     if( $_SESSION['user_image'] ){
 
                         if( $_SESSION['order'] == 'descending' ){
                             rsort( $user_files );
                         }
-                        // iSet i = 2 to skip over "." ".."
+                        // Set i = 2 to skip over "." ".."
                         for( $i = 2; $i < $number_files; $i++ ){
 
                             $target_file = 'assets/uploads/'.$_SESSION['uid'].'/'.$user_files{$i};
-                            echo '<img src="'.$target_file.'"><br>';
-                            echo 'File: '.$target_file.'<br><br>';
+                            echo '<img src="'.$target_file.'"><br><br>';
 
                             // Buttons to change main profile image 
                             echo '<a href="profile.php?make_profile=true&target_file='.$target_file.'">Make Profile</a> ';
@@ -232,101 +229,17 @@
                 ?>  
 
             </div>
-
-        <div id="footer">
-            <h1>Techbook</h1><br>
-                <p>
-                This is some random content to demonstrate parallax. <br>
-                </p><br><br><br>
         </div>
 
+        <div id="footer">
+            <h3>Techbook | Welcome &copy;2017</h3>
+        </div>
+    
     </div>
+
 </body>
 </html>
 
-
-<script>
-/*function menu_click(){
-    document.getElementById("menu-one").classList.toggle("show");
-}
-//window.addEventListener("scroll", parallax);
-function parallax(){
-    document.getElementById("header").style.top = ( window.pageYOffset ) + 'px';
-
-    document.getElementById("header").style.width = ( document.getElementById("header").clientWidth - 5 ) + 'px';
-    document.getElementById("header").style.height = ( document.getElementById("header").clientHeight + 1 ) + 'px';
-}
-window.addEventListener("scroll", fixNavbar);
-function fixNavbar(){
-    if( window.pageYOffset > 150 ){
-
-        if ( window.matchMedia("(min-width: 768px)").matches ){
-            document.getElementById("header").style.marginBottom = '-40px';
-
-            document.getElementById("navbar").style.top = '0px';
-            document.getElementById("navbar").style.position = 'fixed';
-            document.getElementById("box-one").style.position = 'fixed';
-            document.getElementById("box-one").style.top = '40px';
-            document.getElementById("box-two").style.left = '15%';
-            document.getElementById("box-three").style.left = '15%';
-        }
-        else{
-            document.getElementById("navbar").style.top = '0px';
-            document.getElementById("navbar").style.position = 'fixed';
-            //document.getElementById("box-two").style.position = 'fixed';
-            //document.getElementById("box-one").style.top = '40px';
-        }
-    }
-    else{
-        if ( window.matchMedia("(min-width: 768px)").matches ){
-            document.getElementById("navbar").style.top = '40px';
-            document.getElementById("navbar").style.position = 'relative'
-            document.getElementById("box-one").style.position = 'relative';
-            document.getElementById("box-one").style.top = '0px';
-            document.getElementById("box-two").style.left = '0%';
-            document.getElementById("box-three").style.left = '0%';
-        }
-        else{
-            document.getElementById("navbar").style.marginBottom = '-190px';
-            document.getElementById("navbar").style.position = 'relative';
-            document.getElementById("box-two").style.position = 'relative';
-            document.getElementById("box-two").style.marginTop = '0px';
-        }
-    }
-}
-function smoothScroll( elementId ){
-    var offset = 35; // Might need to make responsive
-    var current = window.pageYOffset;
-    var destination = document.getElementById( elementId ).offsetTop;
-
-    var timer = setInterval( function(){
-        if( current <= destination ){
-            current = current + offset;
-            window.scrollTo( 0, current );
-            if( current >= destination ){
-                clearInterval( timer );
-                window.scrollTo( 0, destination );
-            }
-        }
-        if( current >= destination ){
-            current = current - offset;
-            window.scrollTo( 0, current );
-            if( current <= destination ){
-                clearInterval( timer );
-                window.scrollTo( 0, destination );
-            }
-        }
-    }, 1 );
-}
-function makeBackground( elementId ){
-    console.log("makeBackground()");
-    console.log( elementId );
-
-    document.getElementById('box-two').style.background = 'url("' + elementId + '") no-repeat fixed';
-    document.getElementById('box-two').style.backgroundSize = 'cover';
-}
-*/
-</script> 
 
 
 

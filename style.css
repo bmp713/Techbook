@@ -4,9 +4,8 @@ body{
 		animation: 3s 1 alternate fadein;
 }
 /* Override CSS default settings */
-body{ margin: 0px; border: 0px; padding: 0px; box-sizing: border-box; font-family: sans-serif, times; } 
+body, h1, h2, h3{ margin: 0px; border: 0px; padding: 0px; box-sizing: border-box; } 
 a{ cursor: pointer; text-decoration: none; }
-h1, h2, h3{ margin: 0; }
 
 #container{
 /* Container is 100% width and height of any parent element.
@@ -16,6 +15,7 @@ Children will not exceed container dimensions. */
 	overflow: hidden;  
 	position: relative;  
 	margin: auto; /* Centers element within available parent div space */
+	font: 14px sans-serif, times;
 }
 #video_container{
 	position: fixed;
@@ -57,7 +57,7 @@ Children will not exceed container dimensions. */
 		float: left;
 		height: 40px;
 		width: 25%;
-		display: block;
+		//display: block;
 		text-align: center;
 		text-decoration: none;
 		box-sizing: border-box;
@@ -83,7 +83,7 @@ Children will not exceed container dimensions. */
 #main{
 		position: relative;
 		top: 40px;  /* Offset from fixed navbar */
-		height: 100%;		/* TEMPORARY scrolling */
+		height: 100%;
     	animation-duration: 1s;
         animation-name: slideup;
 }
@@ -96,11 +96,8 @@ Children will not exceed container dimensions. */
 		top: 0;
 		float: left;
 		color: rgba(150, 150, 150, 1);
-		//background: rgba(50, 50, 50, 0.9);
-		background: linear-gradient( rgba(100, 100, 100, 0.9), rgba(1, 1, 1, 1) );
+		background: rgba(100, 100, 100, 0.9);
 	}
-
-	/* The menu div contains the BUTTON menu-button and the div menu-content. */
 		#menu{
 		    position: relative;
     		overflow: hidden; /* contains all children from overflowing */
@@ -158,10 +155,10 @@ Children will not exceed container dimensions. */
 
 	#box-two{
 		position: relative;
-		float: left;
+		float: right;
 		width: 80%; /* Width spans 100% of parent element */
-		min-height: 1100px;
 		padding: 2.5%;
+		min-height: 1000px;
 		color: rgba(255, 255, 255, 0.7);
 
 		background: url("assets/images/seth-schwiet-40984.jpg") no-repeat fixed;
@@ -197,20 +194,28 @@ Children will not exceed container dimensions. */
    			width: 25%;
 		}
 
+		.login_p{
+			position: relative;
+			width: 35%;
+			padding: 25px 0px 0px 0px;
+			color: rgba(100, 100, 100, 1);
+			font: 16px sans-serif;
+		}
+
+
 	#box-three{
 		position: relative;
-		margin-top: 150px;
 		float: left;
-		width: 80%; 
-
+		width: 100%; 
 		padding-top: 50px;
 		color: rgba(150, 150, 150, 1);
-		background: rgba(25, 1, 1, 0.8);
-		transition: opacity 1s;
-		opacity: 1;
+
+		background: rgba(25, 1, 1, 0.9);
+		transition: background 1s;	
 	}
 		#box-three:hover{
-			transition: opacity 1s;
+			transition: background 1s;
+			background: rgba(25, 1, 1, 0.7);
 		}
 		#box-three a{
         	display: inline-block;
@@ -252,17 +257,16 @@ Children will not exceed container dimensions. */
 			}
 
 	#footer{
+		position: relative;
 		clear: both;
 		width: 100%;
 		z-index: 99;
-		padding: 10px 10px 25px 55px;
+		//bottom: 0;
+		padding: 10px 10px 50px 55px;
 		text-align: left;
 		background: rgba(25, 25, 20, 0.9);
 		color: rgba(150, 150, 150, 1);
 		font: 10px arial;
-	}
-	#footer h1{
-		font: 48px arial;
 	}
 
 /* Animations for page loading */
@@ -353,7 +357,7 @@ Children will not exceed container dimensions. */
 				width: 50%;
 			}
 			.input-box{
-				width: 80%;
+				width: 50%;
 			}
 	
 		#box-two{
@@ -371,6 +375,14 @@ Children will not exceed container dimensions. */
 			#box-two-text{
 				padding-top: 50px;
 				width: 75%;
+			}
+
+			.login_p{
+				position: relative;
+				width: 80%;
+				padding: 25px 0px 0px 0px;
+				color: rgba(1, 1, 50, 1);
+				font: 16px sans-serif;
 			}
 		
 		#box-three{

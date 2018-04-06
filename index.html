@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">    
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="LAMP | Server">
-    <title> Techbook | Welcome</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="style.js"></script> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="LAMP | Server">
+<title> Techbook | Welcome</title>
+<link rel="stylesheet" href="style.css">
+<script src="style.js"></script> 
 </head>
 <body>
     <div id="container">
 
         <div id="video_container">
-            <video src="assets/video/Buildings.mp4" width="100%" autoplay loop muted>
+            <video src="assets/video/Walking_1.mp4" width="100%" 
+                    style="filter:brightness(30%)" autoplay loop muted>
             </video>
         </div>
 
@@ -22,7 +23,7 @@
 
         <div id="navbar">
             <a class="current" href="index.html" style="width:25%">Home</a>
-            <a href="login.php" style="width:25%">Login</a>
+            <a href="index.php" style="width:25%">Login</a>
             <a href="register.php" style="width:25%">New Account</a>
         </div>
 
@@ -30,10 +31,9 @@
 
             <div id="box-one">
                 <div id="menu">
-                    <button onclick="menuClick()" id="menu-button">Menu</button>
                     <div id="menu-content">
                         <a class="current" href="index.html">Home</a>
-                        <a href="login.php">Login</a>
+                        <a href="index.php">Login</a>
                         <a href="register.php">New Account</a>
                     </div>
                 </div> 
@@ -43,25 +43,13 @@
             <div id="box-two">
 
                 <!--<br><br><img src="assets/images/iphone-ipad-apple.jpg" height="50%"><br><br>-->
-                <div id="box-two-text">
-	                <h1>Techbook | Advanced</h1>
-    	            <p>
-                        This site is meant to demonstrate backend software skills. Log in any acount with "Password" as password and steve, michael, 
-                        or david to log into sample profiles.
-
-
-                    	</p><br><br>
-                    	<h2>Clients</h2>
-                    	<p>
-                    	A single server can serve multiple clients, and a single client can use multiple 
-                    	servers. A client process may run on the same device or may connect over a network to a server on a different device. Typical 
-                    	servers are database servers, file servers, mail servers, print servers, web servers, game servers, and application servers.
-                    	</p><br><br>
-                    	<h2>Account Options</h2>
-                </div>
+                    <h1>Techbook | Welcome</h1>
+                    <p class="login_p">
+                        This site was created to demonstrate backend skills with Apache, MySQL, and PHP.
+                    </p><br>
 
                 <br>Login<br><br>
-                <input type="button" value="Login" class="main-button" onclick="window.location.href='login.php'"><br>
+                <input type="button" value="Login" class="main-button" onclick="window.location.href='index.php'"><br>
                 <br>New Account<br><br>
                 <input type="button" value="New Account" class="main-button" onclick="window.location.href='register.php'"><br><br><br>
             

@@ -2,8 +2,8 @@
 <?php
 /* Login script for MySQL database */
 $host = "localhost";
-$username = "brandon";
-$password = "Welcome123";
+$username = "root";
+$password = "Welcome831";
 $database = "db";
 $table = "users";
 
@@ -11,3 +11,6 @@ $table = "users";
 $connect = mysqli_connect( $host, $username, $password, $database )
 		or die("db.php: Unable to connect to MySQL");
 ?>
+
+
+
