@@ -1,7 +1,7 @@
 
 
 Active URL:
-45.63.53.116/brandon/index.html
+brandonmpiper.com/Techbook
 
 Demonstration of skills in HTML/CSS/Javascript, MySQL/PHP, and responsive design. 
 
