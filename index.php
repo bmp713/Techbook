@@ -59,6 +59,7 @@
            				<br><button type="submit" class="main-button">Log In</button>
    					</form><br>
 					<?php
+                    
                         /* Start session to access $_SESSION global array */
                         session_start();
 
