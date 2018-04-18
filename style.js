@@ -23,7 +23,7 @@ function fixNavbar(){
             document.getElementById("box-one").style.top = '40px';
             document.getElementById("box-one").style.left = '10%';
 
-            //document.getElementById("box-two").style.top = '40';
+            document.getElementById("box-two").style.top = '40px';
             document.getElementById("box-three").style.left = '15%';
         }
         else{
@@ -36,7 +36,7 @@ function fixNavbar(){
             document.getElementById("box-one").style.left = '0%';
             document.getElementById("box-one").style.top = '0';
 
-            //document.getElementById("box-two").style.top = '0';
+            document.getElementById("box-two").style.top = '0';
             document.getElementById("box-three").style.left = '0%';
         }
     }

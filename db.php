@@ -3,7 +3,7 @@
 /* Login script for MySQL database */
 $host = "localhost";
 $username = "root";
-$password = "Welcome831";
+$password = "Welcome123";
 $database = "db";
 $table = "users";
 

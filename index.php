@@ -50,7 +50,8 @@
                     <h1>Welcome</h1><br>
                     <h2>Please log into sample account or create your own</h2>
                     <p class="login_p">
-                        This site was created to demonstrate backend skills with Apache, MySQL, and PHP.
+                        This site was created to demonstrate backend skills with Apache, MySQL, PHP, and responsive design.<br><br>
+                        There is no use of any libraries or frameworks.<br>
                     </p><br>
 				
    					<form action="index.php" method="POST" id="form_login">
