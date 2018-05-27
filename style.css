@@ -1,12 +1,11 @@
-body{ 
- 		background: url("assets/images/background.jpg") no-repeat fixed;
-		background-size: cover;
-		animation: 3s 1 alternate fadein;
-}
 /* Override CSS default settings */
 body, h1, h2, h3{ margin: 0px; border: 0px; padding: 0px; box-sizing: border-box; } 
 a{ cursor: pointer; text-decoration: none; }
 
+body{
+	background: url("assets/images/background.jpg") no-repeat fixed;
+	background-size: cover;
+}
 #container{
 /* Container is 100% width and height of any parent element.
 Children will not exceed container dimensions. */
@@ -16,17 +15,6 @@ Children will not exceed container dimensions. */
 	position: relative;  
 	margin: auto; /* Centers element within available parent div space */
 	font: 14px sans-serif, times;
-}
-#video_container{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background: rgba(10, 10, 10, 1);
-}
-#video_container video{
-	position: relative;
-	z-index: -99;
 }
 #header{
 	position: relative;
@@ -43,7 +31,8 @@ Children will not exceed container dimensions. */
 }
 #navbar{
 	position: fixed;
-	//margin-top: 150px;	/* Offset from fixed header */
+	/*margin-top: 150px;	 Offset from fixed header 
+	*/
 	z-index: 99;		/* Navbar always on top */
 	height: 40px;
 	width: 80%; /* Width percentage needed for menu buttons to wrap */
@@ -51,13 +40,13 @@ Children will not exceed container dimensions. */
 	background: rgba(0, 0, 50, 0.7);
 	font: 14px sans-serif, times;
 	animation-name: slidein; animation-duration: 1s;
-   	//animation-delay: 2s;
+   	/*animation-delay: 2s;*/
 }
 	#navbar a{
 		float: left;
 		height: 40px;
 		width: 25%;
-		//display: block;
+		/*display: block;*/
 		text-align: center;
 		text-decoration: none;
 		box-sizing: border-box;
@@ -77,7 +66,6 @@ Children will not exceed container dimensions. */
 		height: 100%;
 		background: rgba(50, 50, 100, 1);
 	}	
-
 /* The order the boxes appear is the order they appear in container. 
    Boxes can be placed in any order using floats. */
 #main{
@@ -261,7 +249,7 @@ Children will not exceed container dimensions. */
 		clear: both;
 		width: 100%;
 		z-index: 99;
-		//bottom: 0;
+	    /*bottom: 0;*/
 		padding: 10px 10px 50px 55px;
 		text-align: left;
 		background: rgba(25, 25, 20, 0.9);
@@ -324,6 +312,7 @@ Children will not exceed container dimensions. */
 		width: 300%;
 	}
 	#video_container video{
+		display: none;
 	}
 	/* The order the boxes appear is the order they appear in container. 
    	Boxes can be placed in any order using floats. */
@@ -339,7 +328,6 @@ Children will not exceed container dimensions. */
 	    		display: none;
    				height: 0px;
 			}
-			/* menu-button is a BUTTON, not a div */
 			/* the menu-button exceeds container with padding. */
 			#menu-button{
 				display: none;    

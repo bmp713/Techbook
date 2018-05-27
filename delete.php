@@ -11,12 +11,6 @@
 <body>
     <div id="container">
 
-        <div id="video_container">
-            <video src="assets/video/Walking_1.mp4" width="100%" 
-                    style="filter:brightness(30%)" autoplay loop muted>
-            </video>
-        </div>
-
         <div id="header">
             <h1>Techbook <span style=" font: 24px sans-serif;">| Advanced Systems</span></h1>
         </div>
@@ -88,7 +82,7 @@
                             $result = mysqli_query($connect, "SELECT * FROM $table WHERE uid = '$userid'");
                             $row = mysqli_fetch_array($result);
 
-                            if( $pword == $row{'pwd'} && $pword != null ){    
+                            if( $pword == $row['pwd'] && $pword != null ){    
                                 /* Delete record */
                                 $query = "DELETE FROM users WHERE uid='$userid'";
                                 $result = mysqli_query($connect, $query);

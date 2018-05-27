@@ -11,12 +11,6 @@
 <body>
     <div id="container">
 
-        <div id="video_container">
-            <video src="assets/video/Walking_1.mp4" width="100%" 
-                    style="filter:brightness(30%)" autoplay loop muted>
-            </video>
-        </div>
-
         <div id="header">
             <h1>Techbook <span style="font: 24px sans-serif;">| Advanced Systems</span></h1>
         </div>

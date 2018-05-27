@@ -69,6 +69,11 @@ function makeBackground( elementId ){
     document.getElementById('box-two').style.background = 'url("' + elementId + '") no-repeat fixed';
     document.getElementById('box-two').style.backgroundSize = 'cover';
 }
+/* Useful methods
+var style = window.getComputedStyle(value);
+var width = style.getPropertyValue('width');
+elt.setAttribute("style", "width:" + 50 + '%;');
+*/
 
 
 

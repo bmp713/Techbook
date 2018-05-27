@@ -11,18 +11,12 @@
 <body>
     <div id="container">
 
-        <div id="video_container">
-            <video src="assets/video/Walking_1.mp4" width="100%" 
-                    style="filter:brightness(30%)" autoplay loop muted>
-            </video>
-        </div>
-
         <div id="header">
             <h1>Techbook <span style=" font: 24px sans-serif;">| Advanced </span></h1>
         </div>
 
         <div id="navbar">
-            <a href="index.html">Home</a>
+            <a href="index.php">Home</a>
             <a class="current" href="index.php">Login</a></li>
             <a href="register.php">New Account</a>
         </div>
@@ -32,7 +26,7 @@
             <div id="box-one">
                 <div id="menu">
                     <div id="menu-content">
-                        <a class="current" href="index.html">Home</a>
+                        <a class="current" href="index.php">Home</a>
                         <a href="index.php">Login</a>
                         <a href="register.php">New Account</a>
                     </div>
@@ -60,7 +54,6 @@
            				<br><button type="submit" class="main-button">Log In</button>
    					</form><br>
 					<?php
-                    
                         /* Start session to access $_SESSION global array */
                         session_start();
 
@@ -70,8 +63,6 @@
                         else{
                             header("location: profile.php");
                         }
-
-						/* Assign variables from HTML form */
     	   				$user_id = $_POST["uid"];
                         $pword = $_POST["pwd"];
 
@@ -81,13 +72,13 @@
                             $result = mysqli_query($connect, "SELECT * FROM $table WHERE uid = '$user_id'");
                             $row = mysqli_fetch_array($result);
 
-    						if( $row{'pwd'} != null ){
+    						if( $row['pwd'] != null ){
 							
-                                $_SESSION['id'] = $row{'id'};
-                                $_SESSION['first'] = $row{'first'};
-                                $_SESSION['last'] = $row{'last'};
-                                $_SESSION['uid'] = $row{'uid'};
-                                $_SESSION['password'] = $row{'pwd'};
+                                $_SESSION['id'] = $row['id'];
+                                $_SESSION['first'] = $row['first'];
+                                $_SESSION['last'] = $row['last'];
+                                $_SESSION['uid'] = $row['uid'];
+                                $_SESSION['password'] = $row['pwd'];
                                 $_SESSION['logged_in'] = true;
                                 header("location: profile.php");
                             }
